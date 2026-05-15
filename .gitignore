@@ -1,0 +1,17 @@
+# Generated/user images
+img_source/*
+img_converted/*
+
+# Keep empty folders in Git
+!img_source/.gitkeep
+!img_converted/.gitkeep
+
+# Processed cache/markers
+img_converted/.processed/
+.processed/
+
+# Build outputs
+*.exe
+
+# Nim build cache
+nimcache/

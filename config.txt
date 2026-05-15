@@ -1,0 +1,3 @@
+src_path: img_source
+dest_path: img_converted
+max_size: 20 MB
