@@ -191,7 +191,9 @@ proc convertOrCopyFile(inputPath, destPath: string, maxSizeMb, maxSizeBytes: int
 proc processFolder(srcPath, destPath: string, maxSizeMb, maxSizeBytes: int) =
   # Validates folders and processes every new GIF/WEBP file in the source folder.
   if not dirExists(srcPath):
-    echo "Warning: Source folder does not exist: ", srcPath
+    echo "Source folder not found. Creating: ", srcPath
+    createDir(srcPath)
+    echo "Put .gif or .webp files into the folder and run again."
     return
 
   createDir(destPath)
