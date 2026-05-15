@@ -61,6 +61,7 @@ proc markAsProcessed(inputPath, destPath: string) =
 
 proc estimateScale(currentSize, maxSizeBytes: int): int =
   # Estimates a good starting resize percentage from the size ratio.
+  
   if currentSize <= 0:
     return 90
 
@@ -251,8 +252,9 @@ proc main() =
   listFiles(srcPath)
   processFolder(srcPath, destPath, maxSizeMb, maxSizeBytes)
   listFiles(destPath)
-
+  
   waitBeforeExit()
+
 
 
 when isMainModule:
