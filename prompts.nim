@@ -8,7 +8,11 @@ proc askPath*(prompt, defaultPath: string): string =
   # Asks for a path, or returns the default if ENTER is pressed.
   stdout.write(prompt & " [ENTER = " & defaultPath & "]: ")
   let input = stdin.readLine().strip()
-  if input.len == 0: defaultPath else: input
+
+  if input.len == 0:
+    defaultPath
+  else:
+    input
 
 proc printFileInfo(path: string) =
   # Prints one file as: filename (size MB).
@@ -37,7 +41,7 @@ proc listFiles*(folderPath: string) =
   echo ""
 
 proc runWithDots*(program: string, args: openArray[string], message: string): int =
-  # Runs a program while showing a simple "processing..." animation.
+  # Runs a program while showing a simple processing animation.
   let dots = [".", "..", "..."]
   var i = 0
 
@@ -59,7 +63,7 @@ proc runWithDots*(program: string, args: openArray[string], message: string): in
   stdout.write("\r" & message & " done   \n")
   stdout.flushFile()
 
-  proc waitBeforeExit*() =
+proc waitBeforeExit*() =
   # Keeps the window open when the app is double-clicked.
   echo ""
   stdout.write("Press ENTER to exit...")
