@@ -1,0 +1,15 @@
+WEBP to GIF Converter
+Copyright (c) 2026
+
+This application bundles ImageMagick for image processing.
+
+ImageMagick is used for:
+- WEBP -> GIF conversion
+- GIF resizing
+- GIF optimization/compression
+
+ImageMagick License:
+https://imagemagick.org/license/
+
+ImageMagick Website:
+https://imagemagick.org/
